@@ -7,7 +7,7 @@ import (
 	"github.com/jangkartech/twin-branch-office/pkg/services"
 )
 
-func Register(route *gin.Engine) {
+func Register(route gin.IRoutes) {
 	branchOfficeRepo := repos.NewBranchOfficeRepo()
 	branchOfficeService := services.NewBranchOfficeService(branchOfficeRepo)
 	branchOfficeController := controllers.NewBranchOfficeController(branchOfficeService)
