@@ -7,6 +7,7 @@ import (
 	"github.com/jangkartech/twin-branch-office/pkg/dto"
 	"github.com/jangkartech/twin-branch-office/pkg/services"
 	"github.com/jangkartech/twin-branch-office/pkg/validators"
+	utilDTO "github.com/jangkartech/twin-util/pkg/dto"
 	"github.com/jangkartech/twin-util/pkg/util"
 )
 
@@ -70,7 +71,7 @@ func (c *branchOfficeController) GetBranchOffices(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, dto.GetBranchOfficeResponse{
 		Data: responseData,
 		Meta: &dto.BranchOfficeMeta{
-			Pagination: &dto.Pagination{
+			Pagination: &utilDTO.Pagination{
 				Limit:      *req.Limit,
 				Page:       *req.Page,
 				TotalRows:  totalRows,
